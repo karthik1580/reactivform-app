@@ -1,6 +1,14 @@
-<header id="header" class="container-fluid" style="border:1px solid red">
-    <!-- <div class="d-flex flex-column">
-        fdfgsdfg
-    </div> -->
-    
+<header id="header" >
+    <nav class="navbar navbar-expand-sm bg-light">
+        <div class="container-fluid" style="border:1px solid red">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="home" routerLinkActive="active" [innerHtml]="paths.home"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="create" routerLinkActive="active" [innerHtml]="paths.create"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </header>
