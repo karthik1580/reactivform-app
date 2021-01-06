@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { NgCircleProgressModule } from 'ng-circle-progress';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -19,7 +20,29 @@ import { FooterComponent } from './_common/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 200,
+      showTitle: true,
+      showSubtitle: true,
+      responsive: true,
+      startFromZero: true,
+      outerStrokeWidth: 2,
+      innerStrokeWidth: 2,
+      outerStrokeColor: "#808080",
+      innerStrokeColor: "#e7e8ea",
+      animationDuration: 300,
+      clockwise: true,
+      titleFontSize: '50px',
+      subtitleFontSize: '30px',
+      title: [
+        "working",
+        "in",
+        "progress"
+      ],
+      
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
