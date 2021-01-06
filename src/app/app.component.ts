@@ -3,13 +3,12 @@ import {
   Router, 
   Event as RouterEvent, 
   NavigationStart, 
-  NavigationEnd, 
-  NavigationError, 
-  NavigationCancel 
+  NavigationEnd 
 } from '@angular/router';
 // import * as AOS from 'aos';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { filter } from 'rxjs/operators';
+import { paths } from './models/paths';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +17,9 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent {
   title = 'reactivform-app';
-  public spinnerLoading = true;
+  paths = paths;
+  //public spinnerLoading = true;
+  showLoadingIndicator = true;
 
   constructor(
     private _loading: NgCircleProgressModule, 
@@ -26,27 +27,27 @@ export class AppComponent {
       this._router.events
       .pipe(filter((event: any) => event instanceof NavigationStart || event instanceof NavigationEnd))
       .subscribe((event: RouterEvent) => {
-        this.navigationInterceptor(event);
+        this.navigationInterceptor(event);        
       });
     }
 
     private navigationInterceptor(event: RouterEvent): void {
       
       if(event instanceof NavigationStart){
-        this.spinnerLoading = true;
-        console.log('NavigationStart');
+        this.showLoadingIndicator = true;
+        console.log('NavigationStart', this.showLoadingIndicator);
       }
       if(event instanceof NavigationEnd){
-        this.spinnerLoading = false;
-        console.log('NavigationEnd');
+        this.showLoadingIndicator = false;
+        console.log('NavigationEnd', this.showLoadingIndicator);
       }
-      if(event instanceof NavigationCancel){
-        this.spinnerLoading = false;
-        console.log('NavigationCancel');
-      }
-      if(event instanceof NavigationError){
-        this.spinnerLoading = false;
-        console.log('NavigationError');
-      }
+      // if(event instanceof NavigationCancel){
+      //   this.spinnerLoading = false;
+      //   console.log('NavigationCancel');
+      // }
+      // if(event instanceof NavigationError){
+      //   this.spinnerLoading = false;
+      //   console.log('NavigationError');
+      // }
     }
 }

@@ -4,6 +4,7 @@ import { AddGstFormComponent } from './components/add-gst-form/add-gst-form.comp
 import { GetGstFormComponent } from './components/get-gst-form/get-gst-form.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { UpdateGstFormComponent } from './components/update-gst-form/update-gst-form.component';
+// import { InputTextboxComponent } from './_reusable/input-textbox/input-textbox.component';
 import { paths } from './models/paths';
 
 const routes: Routes = [

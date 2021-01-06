@@ -1,1 +1,29 @@
-<p>add-gst-form works!</p>
+<div class="card">
+    <div class="card-body">
+        <form>
+            <div style="border:1px solid red">
+                <!-- <app-input-textbox [label]="input1" [(inputModel)]="data1" [maxLength]="0"></app-input-textbox>
+                <app-input-textbox [label]="input2" [(inputModel)]="data2" [maxLength]="10"></app-input-textbox> -->
+                <app-input-textbox [labelName]="'textBox1'" [inputName]="'TextInputValue1'" [(inputModel)]="data1"></app-input-textbox>
+                <app-input-textbox [labelName]="'textBox2'" [inputName]="'TextInputValue2'" [(inputModel)]="data2"></app-input-textbox>
+            </div>
+        
+        
+        <div class="form-group">
+          <label class="col-md-4">Business Name </label>
+          <input type="text" class="form-control" />
+        </div>
+        <!-- <div class="form-group">
+          <label class="col-md-4">Business GST Number </label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Add Business</button>
+        </div> -->
+      </form>
+    </div>
+  </div>
+
+<!-- <div class="showloadig" >
+    Loading...
+</div> -->
