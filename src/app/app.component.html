@@ -8,9 +8,14 @@
   <app-footer></app-footer>
 </div>
 
-<div class="loadingContainer">
+<div class="loadingContainer" *ngIf="spinnerLoading">
   <div class="progressBar">
     <circle-progress [percent]="100" [radius]="300"></circle-progress>
   </div>
   <div class="loading-overlay"></div>
 </div>
+
+<!-- <div class="my-overlay" *ngIf="spinnerLoading">
+  fgsdfgsdfg
+  <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+</div> -->
