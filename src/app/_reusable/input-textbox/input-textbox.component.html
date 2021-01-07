@@ -1,6 +1,12 @@
 <!-- https://www.c-sharpcorner.com/article/create-custom-textbox-in-angular-8-using-input-and-output-decorators/-->
 
+<!-- 
+https://appdividend.com/2018/01/28/angular-input-output-tutorial-example-scratch/
+https://stackblitz.com/edit/angular-input-example?file=src%2Fapp%2Fhello.component.ts
 
+https://stackblitz.com/angular/jlbmbqjkgre?file=src%2Fapp%2Fapp.component.ts  --- dynamic font change
+
+-->
 
 <!-- <div class="md-form form-sm">
     <input mdbInput type="text" id="form1" class="form-control form-control-sm">
@@ -15,12 +21,22 @@
 <div class="form-group">
     <label for="name1" class="" [innerHtml]="labelName"></label>
     <input type="text" 
-    class="form-control form-control-sm" 
+    class="form-control" 
     [(ngModel)]="inputModel"
     (ngModelChange)="textChange()" 
     [maxlength]="maxLength" 
     />
     </div>
+
+
+<input type="text" 
+    class="form-control" 
+    [(ngModel)]="userModal.name" 
+    name="name"                                
+    #name="ngModel" 
+    required>
+
+    <input type="text" class="form-control" formControlName="name">
 
     <h1>Hello {{inputName}}!</h1>
     <h1>inputModel --- {{inputModel}}!</h1>
